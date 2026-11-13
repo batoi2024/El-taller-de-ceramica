@@ -11,6 +11,9 @@
 
 
 /* ---------- Estilos generales ---------- */
+html {
+    min-height: 100%;
+}
 
 body {
     margin: 0;
@@ -30,15 +33,16 @@ header {
     background-color: #000;
     color: #fff;
     text-align: center;
-    padding: 20px 10px;
+    padding: 21px 10px 60px;
 }
 
 /* logo de las páginas interiores (enlaza al inicio) */
 header > a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.4em;
+    font-size: 2.3em;
     font-weight: bold;
+    line-height: 1.2;
 }
 
 header > a img {
@@ -48,7 +52,7 @@ header > a img {
 
 nav ul {
     list-style: none;
-    margin: 10px 0 0;
+    margin: 8px 0 0;
     padding: 0;
 }
 
@@ -64,7 +68,7 @@ nav a {
     text-transform: uppercase;
     font-size: 0.85em;
     letter-spacing: 2px;
-    padding-bottom: 4px;
+    padding-bottom: 10px;
 }
 
 /* al pasar el ratón se ponen turquesa */
@@ -74,7 +78,7 @@ nav a:hover {
 
 /* la página actual del menú lleva una raya de 2px debajo */
 nav a.activo {
-    border-bottom: 2px solid #6BDEC8;
+    border-bottom: 2px solid #fff;
 }
 
 
@@ -82,38 +86,53 @@ nav a.activo {
 /* como solo la cabecera del index tiene un h1 dentro, uso :has para darle
    un estilo distinto sin tocar el HTML */
 
+ body.portada {
+        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("img/home-hero.jpg");
+        background-color: #000;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+
 header:has(h1) {
-    min-height: 92vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("img/home-hero.jpg");
-    background-color: #000;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    min-height: 73vh;
+    background: none;
 }
 
+header:has(h1) nav ul {
+    margin-top: 20px;
+}
 /* isologo de la portada, más grande */
 header:has(h1) > img {
-    width: 90px;
-    margin-top: 20vh;
+    width: 60px;
+    margin-top: 21vh;
 }
 
 header:has(h1) h1 {
-    font-size: 4.5em;
-    margin: 10px 0;
+    font-size: 7em;
+    margin: 0;
+    line-height: 1.1;
 }
 
 /* eslogan de la portada */
 header:has(h1) p {
     margin: 0;
-    font-size: 1.2em;
+    font-size: 1.9em;
+    font-weight: bold;
     letter-spacing: 4px;
 }
 
+/* el pie de la portada va sobre la foto: sin fondo negro y centrado */
+ body.portada footer {
+        background: none;
+        text-align: center;
+    }
 
 /* ---------- Contenido principal ---------- */
 
 main {
-    max-width: 850px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 40px 20px;
 }
@@ -125,7 +144,7 @@ main h1 {
 
 /* párrafos justificados, como en el diseño */
 main p {
-    text-align: justify;
+    text-align: left;
 }
 
 /* subtítulos con una raya debajo, como en el diseño */
@@ -136,9 +155,19 @@ h2 {
 }
 
 h3 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 5px;
 }
+
+/* en Técnicas y materiales los h3 van un poco a la derecha
+       y sus párrafos un poco más */
+section section h3 {
+        margin-left: 40px;
+}
+
+section section p {
+        margin-left: 90px;
+    }
 
 /* enlaces dentro del texto: color teja, sin subrayado y con
    una línea de puntos debajo; al pasar el ratón la línea se hace continua */
@@ -162,7 +191,7 @@ main li {
 
 /* los puntos de la lista en turquesa */
 main li::marker {
-    color: #6BDEC8;
+    color: #000;
 }
 
 small {
@@ -189,14 +218,27 @@ figcaption {
     margin-top: 6px;
 }
 
+figure.foto {
+        width: 75%;
+        margin: 25px auto 20px;
+        text-align: left;
+}
+
+figure.foto img {
+        width: 100%;
+}
+
 
 /* ---------- Página de cursos ---------- */
 
 /* párrafo de presentación, en negrita y centrado */
 p.intro {
+    max-width: 742px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     font-weight: bold;
-    font-size: 1.15em;
+    font-size: 1.8em;
 }
 
 /* tabla con la programación */
@@ -218,13 +260,13 @@ thead th {
     font-weight: normal;
     font-size: 0.85em;
     color: #666;
-    padding: 10px 8px;
+    padding: 12px 8px;
 }
 
 tbody th,
 tbody td {
     text-align: left;
-    padding: 10px 8px;
+    padding: 12px 8px;
 }
 
 /* filas turquesas alternas (cebra) */
@@ -233,16 +275,17 @@ tbody tr:nth-child(odd) {
 }
 
 tfoot td {
-    font-size: 0.8em;
-    color: #666;
-    padding: 8px;
+        font-size: 0.8em;
+        color: #666;
+        padding: 8px 8px 12px;
+        border-bottom: 2px solid #333;
 }
 
 
 /* ---------- Formulario de inscripción ---------- */
 
 form {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -299,7 +342,7 @@ form > fieldset:first-of-type::after {
 
 /* la nota de los campos obligatorios, alineada con el formulario */
 p.nota {
-    max-width: 700px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
@@ -344,12 +387,26 @@ button:hover {
 /* ---------- Pie de página ---------- */
 
 footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 25px 10px;
-    font-size: 0.85em;
+        background-color: #000;
+        color: #fff;
+        text-align: left;
+        padding: 25px 20px;
+        font-size: 0.85em;
 }
+
+ /* el contenido del pie se alinea con la columna del texto */
+    footer > nav,
+    footer > p {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+ /* el primer enlace del pie sin margen a la izquierda */
+footer nav li:first-child {
+        margin-left: 0;
+    }
+
 
 /* enlaces legales del pie: blancos y sin subrayado, turquesa al pasar el ratón */
 footer nav a {
@@ -361,12 +418,13 @@ footer nav a {
     padding-bottom: 0;
 }
 
+
 footer nav a:hover {
     color: #6BDEC8;
 }
 
 footer p {
-    margin: 8px 0 0;
+    margin: 8px auto 0;
     color: #bbb;
 }
 
