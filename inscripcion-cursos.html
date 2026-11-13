@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>el taller - Inscripción</title>
+        <!-- letra Work Sans de Google Fonts (la pide la práctica) -->
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+    <body>
+
+        <!-- cabecera con el logo (enlaza al inicio) y el menú -->
+        <header>
+            <a href="index.html"><img src="img/isologo-taller.png" alt="Isologo de el taller"> el taller</a>
+            <nav>
+                <ul>
+                    <li><a href="que-es-la-ceramica.html">Cerámica</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="inscripcion-cursos.html" class="activo">Inscripción</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            <h1>Inscripción a los cursos</h1>
+            <p class="nota"><small>Los campos señalados con * son obligatorios</small></p>
+
+            <!-- formulario de inscripción -->
+            <form action="#" method="post">
+
+                <!-- datos personales -->
+                <fieldset>
+                    <legend>Detalles de la inscripción</legend>
+
+                    <!-- cada campo va en su div para colocarlos en dos columnas -->
+                    <div class="campo">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="apellidos">Apellidos *</label>
+                        <input type="text" id="apellidos" name="apellidos" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="fecha">Fecha de nacimiento *</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="curso">Curso *</label>
+                        <select id="curso" name="curso" required>
+                            <option value="" selected>Selecciona el curso</option>
+                            <option value="torno">Torno</option>
+                            <option value="ceramica">Cerámica</option>
+                            <option value="modelado">Modelado</option>
+                            <option value="esmaltes">Esmaltes</option>
+                            <option value="joyeria">Joyería cerámica</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- preguntas extra -->
+                <fieldset>
+                    <legend>Otras informaciones</legend>
+
+                    <fieldset>
+                        <legend>¿Has hecho otros cursos con nosotros? *</legend>
+                        <input type="radio" id="cursos-si" name="otros-cursos" value="si" required>
+                        <label for="cursos-si">Sí</label>
+                        <input type="radio" id="cursos-no" name="otros-cursos" value="no">
+                        <label for="cursos-no">No</label>
+                    </fieldset>
+
+                    <label for="comentarios">¿Quieres comentar o preguntar algo?</label>
+                    <textarea id="comentarios" name="comentarios" rows="6"></textarea>
+                </fieldset>
+
+                <!-- método de pago -->
+                <fieldset>
+                    <legend>Elige un método de pago *</legend>
+                    <input type="radio" id="pago-transferencia" name="pago" value="transferencia" required>
+                    <label for="pago-transferencia">Transferencia</label>
+                    <input type="radio" id="pago-tarjeta" name="pago" value="tarjeta">
+                    <label for="pago-tarjeta">Tarjeta de débito / crédito</label>
+                    <input type="radio" id="pago-efectivo" name="pago" value="efectivo">
+                    <label for="pago-efectivo">En efectivo</label>
+                </fieldset>
+
+                <!-- texto legal sobre protección de datos -->
+                <p><strong>INFORMACIÓN SOBRE PROTECCIÓN DE DATOS DE EL TALLER. Finalidades:</strong> recogida de datos para la inscripción como socio del interesado. <strong>Legitimación:</strong> Consentimiento del interesado. <strong>Destinatarios:</strong> No están previstas cesiones de datos a terceros, excepto obligación legal. <strong>Derechos:</strong> Puede retirar su consentimiento en cualquier momento, así como acceder, rectificar, suprimir sus datos y otros derechos dirigiéndose a <a href="mailto:info@eltaller.es">info@eltaller.es</a>. <strong>Información Adicional:</strong> Puede ampliar la información en el enlace de <a href="#">Aviso Legal</a> y <a href="#">Política de privacidad</a>.</p>
+
+                <input type="checkbox" id="privacidad" name="privacidad" required>
+                <label for="privacidad">He leído y acepto la <a href="#">política de privacidad</a> *</label>
+
+                <button type="submit">Inscríbeme</button>
+
+            </form>
+
+        </main>
+
+        <!-- pie con los enlaces legales -->
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="#">Aviso legal</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Política de cookies</a></li>
+                </ul>
+            </nav>
+            <p>2023 © Miguel Ángel Ruiz Navarro</p>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,435 @@
+/* ================================================
+   el taller - hoja de estilos
+   Una sola hoja para las 4 páginas de la práctica:
+   index, que-es-la-ceramica, cursos e inscripcion-cursos
+   Colores de la práctica:
+     negro    #000000 (texto y fondos de cabecera y pie)
+     turquesa #6BDEC8 (hover de menús, cebra de la tabla)
+     teja     #942C0B (enlaces del texto y botón de enviar)
+     blanco   #FFFFFF (textos sobre fondo negro)
+   ================================================ */
+
+
+/* ---------- Estilos generales ---------- */
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Work Sans", Arial, sans-serif;
+    color: #000;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+
+/* ---------- Cabecera y menú (todas las páginas) ---------- */
+
+header {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 21px 10px 60px;
+}
+
+/* logo de las páginas interiores (enlaza al inicio) */
+header > a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2.3em;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+header > a img {
+    height: 28px;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 12px;
+}
+
+/* enlaces del menú: blancos y sin subrayado */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+}
+
+/* al pasar el ratón se ponen turquesa */
+nav a:hover {
+    color: #6BDEC8;
+}
+
+/* la página actual del menú lleva una raya de 2px debajo */
+nav a.activo {
+    border-bottom: 2px solid #fff;
+}
+
+
+/* ---------- Portada (index): cabecera grande con foto de fondo ---------- */
+/* como solo la cabecera del index tiene un h1 dentro, uso :has para darle
+   un estilo distinto sin tocar el HTML */
+
+ body.portada {
+        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("img/home-hero.jpg");
+        background-color: #000;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+
+header:has(h1) {
+    min-height: 73vh;
+    background: none;
+}
+
+header:has(h1) nav ul {
+    margin-top: 20px;
+}
+/* isologo de la portada, más grande */
+header:has(h1) > img {
+    width: 60px;
+    margin-top: 21vh;
+}
+
+header:has(h1) h1 {
+    font-size: 7em;
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* eslogan de la portada */
+header:has(h1) p {
+    margin: 0;
+    font-size: 1.9em;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+/* el pie de la portada va sobre la foto: sin fondo negro y centrado */
+ body.portada footer {
+        background: none;
+        text-align: center;
+    }
+
+/* ---------- Contenido principal ---------- */
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+main h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+/* párrafos justificados, como en el diseño */
+main p {
+    text-align: left;
+}
+
+/* subtítulos con una raya debajo, como en el diseño */
+h2 {
+    border-bottom: 1px solid #999;
+    padding-bottom: 5px;
+    margin-top: 45px;
+}
+
+h3 {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+/* en Técnicas y materiales los h3 van un poco a la derecha
+       y sus párrafos un poco más */
+section section h3 {
+        margin-left: 40px;
+}
+
+section section p {
+        margin-left: 90px;
+    }
+
+/* enlaces dentro del texto: color teja, sin subrayado y con
+   una línea de puntos debajo; al pasar el ratón la línea se hace continua */
+main a {
+    color: #942C0B;
+    text-decoration: none;
+    border-bottom: 1px dotted #942C0B;
+}
+
+main a:hover {
+    border-bottom-style: solid;
+}
+
+main ul {
+    padding-left: 25px;
+}
+
+main li {
+    margin-bottom: 4px;
+}
+
+/* los puntos de la lista en turquesa */
+main li::marker {
+    color: #000;
+}
+
+small {
+    color: #666;
+}
+
+
+/* ---------- Imágenes y vídeo ---------- */
+
+figure {
+    text-align: center;
+    margin: 30px 0;
+}
+
+figure img,
+figure iframe {
+    max-width: 100%;
+    border: 0;
+}
+
+figcaption {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 6px;
+}
+
+figure.foto {
+        width: 75%;
+        margin: 25px auto 20px;
+        text-align: left;
+}
+
+figure.foto img {
+        width: 100%;
+}
+
+
+/* ---------- Página de cursos ---------- */
+
+/* párrafo de presentación, en negrita y centrado */
+p.intro {
+    max-width: 742px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+/* tabla con la programación */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+/* título de la tabla con una raya arriba y otra abajo */
+caption {
+    padding: 10px;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
+
+thead th {
+    text-align: left;
+    font-weight: normal;
+    font-size: 0.85em;
+    color: #666;
+    padding: 12px 8px;
+}
+
+tbody th,
+tbody td {
+    text-align: left;
+    padding: 12px 8px;
+}
+
+/* filas turquesas alternas (cebra) */
+tbody tr:nth-child(odd) {
+    background-color: #6BDEC8;
+}
+
+tfoot td {
+        font-size: 0.8em;
+        color: #666;
+        padding: 8px 8px 12px;
+        border-bottom: 2px solid #333;
+}
+
+
+/* ---------- Formulario de inscripción ---------- */
+
+form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 1px solid #999;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+label {
+    display: block;
+    margin: 12px 0 4px;
+    font-size: 0.9em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #999;
+    font-family: inherit;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+/* los campos de datos personales van en dos columnas:
+   cada campo flota a la izquierda ocupando la mitad */
+.campo {
+    float: left;
+    width: 48%;
+    margin-right: 4%;
+}
+
+/* el campo de la derecha no lleva margen para que quepan dos por fila */
+.campo:nth-of-type(even) {
+    margin-right: 0;
+}
+
+/* truco para que el fieldset crezca y envuelva a los campos que flotan */
+form > fieldset:first-of-type::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* la nota de los campos obligatorios, alineada con el formulario */
+p.nota {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+/* radio y casilla con su texto al lado, cada uno en su línea */
+input[type="radio"],
+input[type="checkbox"] {
+    float: left;
+    clear: left;
+    margin: 5px 8px 5px 0;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: block;
+    margin: 0 0 8px 22px;
+    font-weight: normal;
+}
+
+/* el fieldset que va dentro de otro (lo de otros cursos) */
+fieldset fieldset {
+    margin-top: 15px;
+}
+
+/* botón de enviar en color teja */
+button {
+    background-color: #942C0B;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6e2108;
+}
+
+
+/* ---------- Pie de página ---------- */
+
+footer {
+        background-color: #000;
+        color: #fff;
+        text-align: left;
+        padding: 25px 20px;
+        font-size: 0.85em;
+}
+
+ /* el contenido del pie se alinea con la columna del texto */
+    footer > nav,
+    footer > p {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+ /* el primer enlace del pie sin margen a la izquierda */
+footer nav li:first-child {
+        margin-left: 0;
+    }
+
+
+/* enlaces legales del pie: blancos y sin subrayado, turquesa al pasar el ratón */
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 1em;
+    padding-bottom: 0;
+}
+
+
+footer nav a:hover {
+    color: #6BDEC8;
+}
+
+footer p {
+    margin: 8px auto 0;
+    color: #bbb;
+}
+
+/* créditos de las imágenes en la portada, en turquesa */
+footer p.creditos a {
+    color: #6BDEC8;
+    text-decoration: none;
+}
