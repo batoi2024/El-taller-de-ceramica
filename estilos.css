@@ -425,11 +425,11 @@ footer nav a:hover {
 
 footer p {
     margin: 8px auto 0;
-    color: #bbb;
+    color: #fff;
 }
 
 /* créditos de las imágenes en la portada, en turquesa */
 footer p.creditos a {
-    color: #6BDEC8;
+    color: #fff;
     text-decoration: none;
 }
