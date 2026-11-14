@@ -87,7 +87,7 @@ nav a.activo {
    un estilo distinto sin tocar el HTML */
 
  body.portada {
-        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("img/home-hero.jpg");
+        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("img/home-hero.jpg");
         background-color: #000;
         background-position: center;
         background-size: cover;
@@ -105,22 +105,29 @@ header:has(h1) nav ul {
 }
 /* isologo de la portada, más grande */
 header:has(h1) > img {
-    width: 60px;
-    margin-top: 21vh;
+    width: 4vw;
+    margin-top: 20vh;
 }
 
 header:has(h1) h1 {
-    font-size: 7em;
+    font-size: 6.5vw;
     margin: 0;
     line-height: 1.1;
+    letter-spacing: -2px;
 }
 
 /* eslogan de la portada */
 header:has(h1) p {
     margin: 0;
-    font-size: 1.9em;
+    font-size: 2vw;
     font-weight: bold;
-    letter-spacing: 4px;
+    letter-spacing: 0.25vw;
+}
+
+/* menú de la portada: letra más grande y sin separar las letras */
+header:has(h1) nav a {
+    font-size: 1.1vw;
+    letter-spacing: normal;
 }
 
 /* el pie de la portada va sobre la foto: sin fondo negro y centrado */
